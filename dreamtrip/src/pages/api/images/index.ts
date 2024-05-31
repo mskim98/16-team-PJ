@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { apiKey } from "@/util/api";
+import { apiKey } from "../../../util/api";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "GET") {
@@ -10,8 +10,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.setHeader("Content-Type", "text/plain");
         const prompt: string = req.query.prompt as string;
         const url = await dall23(prompt, apiKey);
-        console.log(url);
-        
+        if (!url) {
+            res.status(500).json({ error: "Error generating image" });
+            return;
+        }
+        // console.log(url);
         res.status(200).send(url);
         // res.status(200).send();
     }
