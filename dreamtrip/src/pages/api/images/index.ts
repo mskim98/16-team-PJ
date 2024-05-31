@@ -15,6 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.status(200).send(url);
         // res.status(200).send();
     }
+    res.status(405).json({ error: "Method Not Allowed" });
 }
 
 async function dall23(prompt: string, key: string) {
