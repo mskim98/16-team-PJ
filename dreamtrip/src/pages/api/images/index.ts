@@ -21,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(405).json({ error: "Method Not Allowed" });
 }
 
-async function dall23(prompt: string, key: string) {
+export async function dall23(prompt: string, key: string) {
     let result: string;
     await fetch("https://api.openai.com/v1/images/generations", {
         method: "POST",
