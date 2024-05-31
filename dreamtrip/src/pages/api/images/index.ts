@@ -34,11 +34,9 @@ async function dall23(prompt: string, key: string) {
         }),
     })
     .then((response) => {
-        console.log(response);
         return response.json()
     })
     .then((data) => {
-        console.log(data);
         if (!data || !data.data || data.data.length === 0 || data.errors) {
             console.log("Error  ")
             console.error(data);
