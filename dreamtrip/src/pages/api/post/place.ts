@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { dall23 } from "../../images";
-import { apiKey } from "../../../../util/api";
+import { dall23 } from "../images";
+import { apiKey } from "../../../util/api";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === "POST") {
