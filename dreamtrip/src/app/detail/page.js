@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import usePlaceStore from "../../store/placeStore";
 
 const res = {
   recommend: "좋아요, 부산에서 유명한 여행지를 아래에 몇 가지 추천해드릴게요!",
@@ -30,7 +31,7 @@ export default function DetailPage() {
   const { register, handleSubmit } = useForm();
   const [isPlus, setIsPlus] = useState(false);
 
-  // const placeData = usePlaceStore((state) => state.placeData);
+  const placeData = usePlaceStore((state) => state.placeData);
 
   const onNext = (data) => {
     router.push("/result");

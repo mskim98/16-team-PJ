@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 const regionList = ["부산", "미국", "울릉도", "프랑스"];
 
-const Home = () => {
+export default function Home() {
   const router = useRouter();
   return (
     <div className="h-screen flex flex-col justify-center space-y-10 px-6">
@@ -26,12 +26,15 @@ const Home = () => {
           여행 계획 추가하러 가기
         </button>
       </div>
-      <div class="w-full border-t border-black-400"></div>
+      <div className="w-full border-t border-black-400"></div>
       <div className="text-mx text-center">이전 기록</div>
       <div className="flex flex-col justify-center items-center">
         {regionList.map((region, i) => (
-          <div className="m-2 flex flex-col justify-center items-center">
-            <div key={i} className="">
+          <div
+            key={i}
+            className="m-2 flex flex-col justify-center items-center"
+          >
+            <div>
               <Link href="/" className="text-xl">
                 {region}
               </Link>
@@ -42,4 +45,4 @@ const Home = () => {
       </div>
     </div>
   );
-};
+}

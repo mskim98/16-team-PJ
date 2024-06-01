@@ -2,31 +2,31 @@
 
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import usePlaceStore from "../../store/placeStore";
 
 export default function RegionPage() {
   const router = useRouter();
   const { register, handleSubmit } = useForm();
 
   const onNext = async (data) => {
-    // try {
-    //   const res = await fetch("/api/post/region", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ region: data.region }),
-    //   });
+    try {
+      const res = await fetch("/api/post/region", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ region: data.region }),
+      });
 
-    //   if (res.ok) {
-    //     const result = await res.json();
-    //     setRegionData(result);
-    router.push("/detail");
-    //   } else {
-    //     console.error("Failed to post region data");
-    //   }
-    // } catch (error) {
-    //   console.error("Error posting region data:", error);
-    // }
+      if (res.ok) {
+        const result = await res.json();
+        console.log(result);
+        usePlaceStore.setPlaceData(result);
+      }
+      router.push("/detail");
+    } catch (error) {
+      console.error("Error posting region data:", error);
+    }
   };
   return (
     <main className="w-full flex flex-1 flex-col align-items justify-between">
