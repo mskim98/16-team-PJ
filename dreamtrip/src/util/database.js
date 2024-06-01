@@ -1,5 +1,5 @@
 import { MongoClient } from "mongodb";
-const url = "mongodb+srv://admin:admin@cluster0.uqd0kzk.mongodb.net/";
+const url = "";
 const options = { useNewUrlParser: true };
 let connectDB;
 
