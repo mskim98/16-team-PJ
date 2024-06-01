@@ -24,14 +24,12 @@ export default function ResultPage() {
       </div>
       <div className="w-full my-[15px] bg-gray p-3 rounded-2xl focus:outline-none resize-none font-pre text-[14px]">
         <div className="flex justify-center align-items py-5">
-          <img src="ExampleImage1.png" alt="예시이미지"></img>
+          <img src="ExampleImage2.png" alt="예시이미지"></img>
         </div>
         <div className="text-xl ml-2 mb-3 underline text-blue-600">
-          자갈치 시장
+          광안리 해수욕장
         </div>
-        <div className="ml-2">
-          자갈치 시장에서 친구들이랑 생선구이 먹으러 갈거야
-        </div>
+        <div className="ml-2">나는 광안리에 가서 야경을 볼거야</div>
       </div>
     </main>
   );

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const regionList = ["부산", "미국", "울릉도", "프랑스"];
 
